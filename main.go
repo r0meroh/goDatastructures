@@ -15,5 +15,9 @@ func main() {
 	fmt.Println(newStack)
 	newStack.Pop()
 	fmt.Println(newStack)
+	newStack.Push(6)
+	fmt.Println(newStack)
+	popped := newStack.ReturnPop()
+	fmt.Println(popped, " was popped off stack")
 
 }

@@ -16,3 +16,11 @@ func (myStack *Stack) Pop () {
 	myStack.element = myStack.element[:len(myStack.element)-1]
 }
 
+// Pop with removed item being returned
+
+func (myStack *Stack) ReturnPop () int {
+	temp := myStack.element[len(myStack.element)-1]
+	myStack.Pop()
+	return temp
+}
+
