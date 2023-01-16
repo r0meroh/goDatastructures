@@ -3,7 +3,7 @@ package main
 import (
 	"GOPATH/linked_list"
 	// "GOPATH/stack_n_queue"
-	 "fmt"
+	
 )
 
 
@@ -21,16 +21,15 @@ func main() {
 
 	myList := linked_list.LinkedList{}
 
-	node1 := &linked_list.Node{}
-	node2 := &linked_list.Node{}
-	node3 := &linked_list.Node{}
+	node1 := &linked_list.Node{Data: 1}
+	node2 := &linked_list.Node{Data: 2}
+	node3 := &linked_list.Node{Data: 3}
 
 	myList.InsertFront(node1)
 	myList.InsertFront(node2)
 	myList.InsertFront(node3)
-	fmt.Println(myList)
-
 	myList.PrintList()
+
 
 
 }

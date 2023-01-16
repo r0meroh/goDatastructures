@@ -1,6 +1,9 @@
 package linked_list
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type Node struct {
 	Data int
@@ -13,18 +16,27 @@ type LinkedList struct {
 }
 
 func (l LinkedList) PrintList() {
+	flowerBox := strings.Repeat("=", l.Length * 3)
 	currentNode := l.Head
+	fmt.Println("Printing linked list:")
+	fmt.Println(flowerBox)
+	
 	for l.Length != 0 {
-		fmt.Printf("%d", currentNode)
+		if l.Length > 1{
+		fmt.Printf("%d->", currentNode.Data)
 		currentNode = currentNode.Next
-		l.Length = l.Length - 1
+		l.Length --
+		}else{
+			fmt.Printf("%d\n", currentNode.Data)
+			l.Length --
+		}
 	}
-	fmt.Println("-----------")
+	fmt.Println(flowerBox)
 }
 
 func (l *LinkedList) InsertFront(n *Node) {
 	oldHead := l.Head
 	l.Head = n
-	l.Head = oldHead
-	l.Length = l.Length + 1
+	l.Head.Next = oldHead
+	l.Length ++
 }
