@@ -48,3 +48,20 @@ func (l *LinkedList) InsertFront(n *Node) {
 	l.Head.Next = oldHead
 	l.Length ++
 }
+
+func LinkedListExample (){
+	
+	myList := LinkedList{}
+
+	node1 := &Node{Data: 1}
+	node2 := &Node{Data: 2}
+	node3 := &Node{Data: 3}
+
+	myList.InsertFront(node1)
+	myList.InsertFront(node2)
+	myList.InsertFront(node3)
+	myList.InsertNodeWithValue(55)
+	myList.InsertNodeWithValue(66)
+	myList.InsertNodeWithValue(77)
+	myList.PrintList()
+}
