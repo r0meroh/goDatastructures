@@ -28,6 +28,9 @@ func main() {
 	myList.InsertFront(node1)
 	myList.InsertFront(node2)
 	myList.InsertFront(node3)
+	myList.InsertNodeWithValue(55)
+	myList.InsertNodeWithValue(66)
+	myList.InsertNodeWithValue(77)
 	myList.PrintList()
 
 

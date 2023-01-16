@@ -34,6 +34,14 @@ func (l LinkedList) PrintList() {
 	fmt.Println(flowerBox)
 }
 
+func(l *LinkedList) InsertNodeWithValue (value int){
+	oldHead := l.Head
+	tempNode := &Node{Data: value}
+	l.Head = tempNode
+	l.Head.Next = oldHead
+	l.Length ++
+}
+
 func (l *LinkedList) InsertFront(n *Node) {
 	oldHead := l.Head
 	l.Head = n
