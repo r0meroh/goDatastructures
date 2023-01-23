@@ -58,6 +58,10 @@ func (l *LinkedList) DeleteByValue(value int){
 	}
 	previousNodeToDelete := l.Head
 	for previousNodeToDelete.Next.Data != value{
+		if previousNodeToDelete.Next.Next == nil {
+			fmt.Println("value not found")
+			return 
+		}
 		previousNodeToDelete = previousNodeToDelete.Next
 	}
 	previousNodeToDelete.Next = previousNodeToDelete.Next.Next
@@ -67,7 +71,7 @@ func (l *LinkedList) DeleteByValue(value int){
 func (l *LinkedList) CheckIfEmpty()error{
 	if l.Length == 0{
 		
-		return  errors.New("Found empty list")
+		return  errors.New("found empty list")
 	}
 	return nil
 }
@@ -90,4 +94,9 @@ func LinkedListExample (){
 	fmt.Println("deleting 66" )
 	myList.DeleteByValue(66)
 	myList.PrintList()
+	fmt.Println("delete 77")
+	myList.DeleteByValue(77)
+	myList.PrintList()
+	fmt.Println("delete non-existent value of 99")
+	myList.DeleteByValue(99)
 }
