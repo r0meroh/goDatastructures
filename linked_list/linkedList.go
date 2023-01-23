@@ -1,6 +1,7 @@
 package linked_list
 
 import (
+	"errors"
 	"fmt"
 	"strings"
 )
@@ -49,6 +50,28 @@ func (l *LinkedList) InsertFront(n *Node) {
 	l.Length ++
 }
 
+func (l *LinkedList) DeleteByValue(value int){
+	l.CheckIfEmpty()
+	if l.Head.Data == value{
+		l.Head = l.Head.Next
+		l.Length --
+	}
+	previousNodeToDelete := l.Head
+	for previousNodeToDelete.Next.Data != value{
+		previousNodeToDelete = previousNodeToDelete.Next
+	}
+	previousNodeToDelete.Next = previousNodeToDelete.Next.Next
+	l.Length --
+}
+
+func (l *LinkedList) CheckIfEmpty()error{
+	if l.Length == 0{
+		
+		return  errors.New("Found empty list")
+	}
+	return nil
+}
+
 func LinkedListExample (){
 	
 	myList := LinkedList{}
@@ -63,5 +86,8 @@ func LinkedListExample (){
 	myList.InsertNodeWithValue(55)
 	myList.InsertNodeWithValue(66)
 	myList.InsertNodeWithValue(77)
+	myList.PrintList()
+	fmt.Println("deleting 66" )
+	myList.DeleteByValue(66)
 	myList.PrintList()
 }

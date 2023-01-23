@@ -27,6 +27,9 @@ func (myStack *Stack) ReturnPop () int {
 }
 
 func PrintOutStackExample (){
+	fmt.Println("\n===================================================")
+	fmt.Println("Stack Example")
+	fmt.Println("===================================================\n")
 	fmt.Println("Creating an empty stack, pushing to it and popping elements")
 	newStack := Stack{}
 	fmt.Println(newStack)

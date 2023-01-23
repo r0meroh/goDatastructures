@@ -18,7 +18,7 @@ func (myQueue *Queue) Dequeue() {
 }
 
 // return dequeue value
-func (myQueue *Queue) ReturnDequeue() int {
+func (myQueue *Queue) ReturnDequeueValue() int {
 	temp := myQueue.elements[0]
 	myQueue.Dequeue()
 	return temp
@@ -27,6 +27,10 @@ func (myQueue *Queue) ReturnDequeue() int {
 // print example usage
 func ExampleQueue() {
 	// stack_n_queue.PrintOutStackExample()
+	fmt.Println("\n===================================================")
+	fmt.Println("Queue Example")
+	fmt.Println("===================================================\n")
+
 	fmt.Println("Creating an empty Queue. Adding to it and removing values")
 	newQueue := Queue{}
 	fmt.Println(newQueue)
@@ -36,6 +40,6 @@ func ExampleQueue() {
 	fmt.Printf("Added to empty queue. Current queue is: %v. Removing values\n", newQueue)
 	newQueue.Dequeue()
 	fmt.Println(newQueue)
-	fmt.Printf("Next value to be removed is: %v. \nFinal values in queue: ", newQueue.ReturnDequeue())
+	fmt.Printf("Next value to be removed is: %v. \nFinal values in queue: ", newQueue.ReturnDequeueValue())
 	fmt.Println(newQueue)
 }
